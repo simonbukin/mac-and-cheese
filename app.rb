@@ -1,6 +1,7 @@
+require 'rubygems'
+require 'sinatra'
 require 'net/http'
 require 'nokogiri'
-require 'sinatra'
 
 def get_dining_data(year, month, day, location_num)
   uri = URI('http://nutrition.sa.ucsc.edu/menuSamp.asp')
