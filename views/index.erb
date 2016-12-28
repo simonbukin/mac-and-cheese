@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>Mac And Cheese</title>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+  <% if college_list.size > 0 %>
+    <div id="bg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Childhood_Favorite_Boxed_Mac_%26_Cheese_(3387828736).jpg/1024px-Childhood_Favorite_Boxed_Mac_%26_Cheese_(3387828736).jpg" alt="">
+    </div>
+    <h1 class="yes">Indeed there is</h1>
+    <h2 class="yes">(In
+      <% college_list.each_with_index do |college, i| %>
+        <%= college + (i != college_list.size - 1 ? " and " : "") %>
+      <% end %>
+      )
+    </h2>
+  <% else %>
+    <h1>Unfortunately not</h1>
+  <% end %>
+</body>
+</html>
