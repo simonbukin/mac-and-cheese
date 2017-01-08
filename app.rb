@@ -39,7 +39,7 @@ get '/' do
   colleges.each do |hall, num|
     food_items = get_dining_data(year, month, day, num)
     food_items.each do |item|
-      if item.text == "Macaroni & Cheese"
+      if item.text == "Macaroni & Cheese" || item.text == "Mac & Cheese"
         colleges_with_mac_and_cheese.push(hall)
       end
     end
