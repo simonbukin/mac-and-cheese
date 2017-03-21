@@ -39,7 +39,8 @@ get '/' do
   colleges.each do |hall, num|
     food_items = get_dining_data(year, month, day, num)
     food_items.each do |item|
-      if item.text == "Macaroni & Cheese" || item.text == "Mac & Cheese"
+      #if item.text == "Macaroni & Cheese" || item.text == "Mac & Cheese"
+			if ((/(((m|M)ac|(m|M)acaroni)+\s+((a|A)nd|&)+\s+((c|C)heese|(f|F)romage))/ =~ item.text) != nil) && !(colleges_with_mac_and_cheese.include?(hall))
         colleges_with_mac_and_cheese.push(hall)
       end
     end
